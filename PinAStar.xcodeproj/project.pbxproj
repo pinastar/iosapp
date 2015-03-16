@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00CD9E1E1AB6F7170023CD17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD9E1D1AB6F7170023CD17 /* AppDelegate.swift */; };
+		00CD9E201AB6F7170023CD17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD9E1F1AB6F7170023CD17 /* ViewController.swift */; };
+		00CD9E231AB6F7170023CD17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00CD9E211AB6F7170023CD17 /* Main.storyboard */; };
+		00CD9E251AB6F7170023CD17 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CD9E241AB6F7170023CD17 /* Images.xcassets */; };
+		00CD9E281AB6F7170023CD17 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CD9E261AB6F7170023CD17 /* LaunchScreen.xib */; };
+		00CD9E341AB6F7180023CD17 /* PinAStarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD9E331AB6F7180023CD17 /* PinAStarTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00CD9E2E1AB6F7180023CD17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00CD9E101AB6F7170023CD17 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00CD9E171AB6F7170023CD17;
+			remoteInfo = PinAStar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00CD9E181AB6F7170023CD17 /* PinAStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinAStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00CD9E1C1AB6F7170023CD17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00CD9E1D1AB6F7170023CD17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		00CD9E1F1AB6F7170023CD17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		00CD9E221AB6F7170023CD17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00CD9E241AB6F7170023CD17 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		00CD9E271AB6F7170023CD17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		00CD9E2D1AB6F7180023CD17 /* PinAStarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinAStarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00CD9E321AB6F7180023CD17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00CD9E331AB6F7180023CD17 /* PinAStarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinAStarTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00CD9E151AB6F7170023CD17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00CD9E2A1AB6F7180023CD17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00CD9E0F1AB6F7170023CD17 = {
+			isa = PBXGroup;
+			children = (
+				00CD9E1A1AB6F7170023CD17 /* PinAStar */,
+				00CD9E301AB6F7180023CD17 /* PinAStarTests */,
+				00CD9E191AB6F7170023CD17 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00CD9E191AB6F7170023CD17 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00CD9E181AB6F7170023CD17 /* PinAStar.app */,
+				00CD9E2D1AB6F7180023CD17 /* PinAStarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00CD9E1A1AB6F7170023CD17 /* PinAStar */ = {
+			isa = PBXGroup;
+			children = (
+				00CD9E1D1AB6F7170023CD17 /* AppDelegate.swift */,
+				00CD9E1F1AB6F7170023CD17 /* ViewController.swift */,
+				00CD9E211AB6F7170023CD17 /* Main.storyboard */,
+				00CD9E241AB6F7170023CD17 /* Images.xcassets */,
+				00CD9E261AB6F7170023CD17 /* LaunchScreen.xib */,
+				00CD9E1B1AB6F7170023CD17 /* Supporting Files */,
+			);
+			path = PinAStar;
+			sourceTree = "<group>";
+		};
+		00CD9E1B1AB6F7170023CD17 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00CD9E1C1AB6F7170023CD17 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00CD9E301AB6F7180023CD17 /* PinAStarTests */ = {
+			isa = PBXGroup;
+			children = (
+				00CD9E331AB6F7180023CD17 /* PinAStarTests.swift */,
+				00CD9E311AB6F7180023CD17 /* Supporting Files */,
+			);
+			path = PinAStarTests;
+			sourceTree = "<group>";
+		};
+		00CD9E311AB6F7180023CD17 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00CD9E321AB6F7180023CD17 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00CD9E171AB6F7170023CD17 /* PinAStar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00CD9E371AB6F7180023CD17 /* Build configuration list for PBXNativeTarget "PinAStar" */;
+			buildPhases = (
+				00CD9E141AB6F7170023CD17 /* Sources */,
+				00CD9E151AB6F7170023CD17 /* Frameworks */,
+				00CD9E161AB6F7170023CD17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PinAStar;
+			productName = PinAStar;
+			productReference = 00CD9E181AB6F7170023CD17 /* PinAStar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00CD9E2C1AB6F7180023CD17 /* PinAStarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00CD9E3A1AB6F7180023CD17 /* Build configuration list for PBXNativeTarget "PinAStarTests" */;
+			buildPhases = (
+				00CD9E291AB6F7180023CD17 /* Sources */,
+				00CD9E2A1AB6F7180023CD17 /* Frameworks */,
+				00CD9E2B1AB6F7180023CD17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00CD9E2F1AB6F7180023CD17 /* PBXTargetDependency */,
+			);
+			name = PinAStarTests;
+			productName = PinAStarTests;
+			productReference = 00CD9E2D1AB6F7180023CD17 /* PinAStarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00CD9E101AB6F7170023CD17 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "PinAStar Apps Corp";
+				TargetAttributes = {
+					00CD9E171AB6F7170023CD17 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					00CD9E2C1AB6F7180023CD17 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 00CD9E171AB6F7170023CD17;
+					};
+				};
+			};
+			buildConfigurationList = 00CD9E131AB6F7170023CD17 /* Build configuration list for PBXProject "PinAStar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00CD9E0F1AB6F7170023CD17;
+			productRefGroup = 00CD9E191AB6F7170023CD17 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00CD9E171AB6F7170023CD17 /* PinAStar */,
+				00CD9E2C1AB6F7180023CD17 /* PinAStarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00CD9E161AB6F7170023CD17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00CD9E231AB6F7170023CD17 /* Main.storyboard in Resources */,
+				00CD9E281AB6F7170023CD17 /* LaunchScreen.xib in Resources */,
+				00CD9E251AB6F7170023CD17 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00CD9E2B1AB6F7180023CD17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00CD9E141AB6F7170023CD17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00CD9E201AB6F7170023CD17 /* ViewController.swift in Sources */,
+				00CD9E1E1AB6F7170023CD17 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00CD9E291AB6F7180023CD17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00CD9E341AB6F7180023CD17 /* PinAStarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00CD9E2F1AB6F7180023CD17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00CD9E171AB6F7170023CD17 /* PinAStar */;
+			targetProxy = 00CD9E2E1AB6F7180023CD17 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		00CD9E211AB6F7170023CD17 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00CD9E221AB6F7170023CD17 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		00CD9E261AB6F7170023CD17 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00CD9E271AB6F7170023CD17 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00CD9E351AB6F7180023CD17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		00CD9E361AB6F7180023CD17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00CD9E381AB6F7180023CD17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PinAStar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		00CD9E391AB6F7180023CD17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PinAStar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		00CD9E3B1AB6F7180023CD17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PinAStarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PinAStar.app/PinAStar";
+			};
+			name = Debug;
+		};
+		00CD9E3C1AB6F7180023CD17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PinAStarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PinAStar.app/PinAStar";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00CD9E131AB6F7170023CD17 /* Build configuration list for PBXProject "PinAStar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00CD9E351AB6F7180023CD17 /* Debug */,
+				00CD9E361AB6F7180023CD17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00CD9E371AB6F7180023CD17 /* Build configuration list for PBXNativeTarget "PinAStar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00CD9E381AB6F7180023CD17 /* Debug */,
+				00CD9E391AB6F7180023CD17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		00CD9E3A1AB6F7180023CD17 /* Build configuration list for PBXNativeTarget "PinAStarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00CD9E3B1AB6F7180023CD17 /* Debug */,
+				00CD9E3C1AB6F7180023CD17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00CD9E101AB6F7170023CD17 /* Project object */;
+}
