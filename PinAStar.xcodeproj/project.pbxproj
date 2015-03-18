@@ -13,6 +13,8 @@
 		00CD9E251AB6F7170023CD17 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CD9E241AB6F7170023CD17 /* Images.xcassets */; };
 		00CD9E281AB6F7170023CD17 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CD9E261AB6F7170023CD17 /* LaunchScreen.xib */; };
 		00CD9E341AB6F7180023CD17 /* PinAStarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD9E331AB6F7180023CD17 /* PinAStarTests.swift */; };
+		00CD9E3F1AB71B660023CD17 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD9E3E1AB71B660023CD17 /* FacebookSDK.framework */; };
+		00CD9E421AB728630023CD17 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD9E411AB728630023CD17 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,9 @@
 		00CD9E2D1AB6F7180023CD17 /* PinAStarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinAStarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CD9E321AB6F7180023CD17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00CD9E331AB6F7180023CD17 /* PinAStarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinAStarTests.swift; sourceTree = "<group>"; };
+		00CD9E3E1AB71B660023CD17 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		00CD9E401AB71FBE0023CD17 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		00CD9E411AB728630023CD17 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00CD9E421AB728630023CD17 /* Social.framework in Frameworks */,
+				00CD9E3F1AB71B660023CD17 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +84,7 @@
 		00CD9E1A1AB6F7170023CD17 /* PinAStar */ = {
 			isa = PBXGroup;
 			children = (
+				00CD9E3D1AB71B560023CD17 /* Facebook */,
 				00CD9E1D1AB6F7170023CD17 /* AppDelegate.swift */,
 				00CD9E1F1AB6F7170023CD17 /* ViewController.swift */,
 				00CD9E211AB6F7170023CD17 /* Main.storyboard */,
@@ -90,6 +98,8 @@
 		00CD9E1B1AB6F7170023CD17 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00CD9E411AB728630023CD17 /* Social.framework */,
+				00CD9E3E1AB71B660023CD17 /* FacebookSDK.framework */,
 				00CD9E1C1AB6F7170023CD17 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +120,14 @@
 				00CD9E321AB6F7180023CD17 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00CD9E3D1AB71B560023CD17 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				00CD9E401AB71FBE0023CD17 /* Bridging-Header.h */,
+			);
+			name = Facebook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +179,7 @@
 				TargetAttributes = {
 					00CD9E171AB6F7170023CD17 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = G33Y2YTRNR;
 					};
 					00CD9E2C1AB6F7180023CD17 = {
 						CreatedOnToolsVersion = 6.2;
@@ -338,9 +357,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wayne Christopher Uy (6Y625RVHTU)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PinAStar",
+				);
 				INFOPLIST_FILE = PinAStar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a0ff2a82-a869-4310-a5d1-511af061ab96";
+				SWIFT_OBJC_BRIDGING_HEADER = "PinAStar/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -348,9 +375,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wayne Christopher Uy (6Y625RVHTU)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PinAStar",
+				);
 				INFOPLIST_FILE = PinAStar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a0ff2a82-a869-4310-a5d1-511af061ab96";
+				SWIFT_OBJC_BRIDGING_HEADER = "PinAStar/Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -407,6 +442,7 @@
 				00CD9E391AB6F7180023CD17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00CD9E3A1AB6F7180023CD17 /* Build configuration list for PBXNativeTarget "PinAStarTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +451,7 @@
 				00CD9E3C1AB6F7180023CD17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
