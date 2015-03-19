@@ -8,6 +8,8 @@
 
 import UIKit
 import Social
+import Fabric
+import TwitterKit
 
 let client_id = ""
 let secret_key = ""
@@ -20,12 +22,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        FBLoginView.self
-        FBProfilePictureView.self
+        FBAppEvents.activateApp()
         
+        //FBLoginView.self
+       // FBProfilePictureView.self
         
-        // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        var state = isLoggedIn()
+        if(state == true){
+            var loggedVC = LoggedViewController()
+            var nav = UINavigationController(rootViewController: loggedVC)
+            self.window?.rootViewController = nav
+            
+        }
+        else{
+           // var logged
+            var mainVC = MainViewController()
+            var nav = UINavigationController(rootViewController: mainVC)
+            self.window?.rootViewController = nav
+        }
+        self.window?.makeKeyAndVisible()
+       
+       // Fabric.with([Twitter()])
+
         return true
+    }
+    
+    func isLoggedIn() -> Bool{
+        var activeSession = FBSession.activeSession()
+        let state = activeSession.state
+        let isLoggedIn = activeSession != nil && (state == FBSessionState.Open || state == FBSessionState.CreatedTokenLoaded || state == FBSessionState.OpenTokenExtended)
+        return isLoggedIn
     }
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
         var wasHandled: Bool = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
@@ -48,6 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
+        
+        FBAppCall.handleDidBecomeActive()
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 

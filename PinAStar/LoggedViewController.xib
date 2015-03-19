@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoggedViewController" customModule="PinAStar" customModuleProvider="target">
+            <connections>
+                <outlet property="btnGetStarted" destination="Lwq-I7-a9n" id="B8Z-PR-7Lt"/>
+                <outlet property="btnLogout" destination="qJY-Qz-zGZ" id="mx0-2L-aDW"/>
+                <outlet property="imgView" destination="oNk-f8-fpM" id="dgk-wL-V07"/>
+                <outlet property="lblName" destination="my3-Rq-YHI" id="7Bd-J0-XSj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are logged in as" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dz-fD-zSf">
+                    <rect key="frame" x="192" y="107" width="216" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="pg3-rW-6tg"/>
+                        <constraint firstAttribute="width" constant="216" id="xdO-lH-vbt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="my3-Rq-YHI">
+                    <rect key="frame" x="8" y="234" width="584" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="29" id="dvV-IT-uQ9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJY-Qz-zGZ" customClass="FBLoginView">
+                    <rect key="frame" x="168" y="279" width="265" height="44"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="265" id="PEP-Za-30C"/>
+                        <constraint firstAttribute="height" constant="44" id="eLc-Nq-ZTs"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNk-f8-fpM" customClass="FBProfilePictureView">
+                    <rect key="frame" x="258" y="136" width="85" height="90"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="Fdg-dG-GRh"/>
+                        <constraint firstAttribute="width" constant="85" id="Zbm-jN-jMF"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwq-I7-a9n">
+                    <rect key="frame" x="168" y="338" width="265" height="44"/>
+                    <color key="backgroundColor" red="0.0" green="0.61870659722222221" blue="0.031181446764960378" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="265" id="I9k-MN-0oR"/>
+                        <constraint firstAttribute="height" constant="44" id="elm-FF-iGz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                    <state key="normal" title="Get Started">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="clickedGetStarted:" destination="-1" eventType="touchUpInside" id="jld-Z5-yhj"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="6dz-fD-zSf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="107" id="4lE-kc-Kvg"/>
+                <constraint firstItem="my3-Rq-YHI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="KLh-4b-gVo"/>
+                <constraint firstItem="oNk-f8-fpM" firstAttribute="top" secondItem="6dz-fD-zSf" secondAttribute="bottom" constant="8" id="OCn-om-OEl"/>
+                <constraint firstAttribute="centerX" secondItem="Lwq-I7-a9n" secondAttribute="centerX" id="QRL-2R-Fnb"/>
+                <constraint firstAttribute="centerX" secondItem="6dz-fD-zSf" secondAttribute="centerX" id="V7x-py-SrK"/>
+                <constraint firstAttribute="centerX" secondItem="qJY-Qz-zGZ" secondAttribute="centerX" id="VT7-yu-BE2"/>
+                <constraint firstItem="qJY-Qz-zGZ" firstAttribute="top" secondItem="my3-Rq-YHI" secondAttribute="bottom" constant="16" id="XoL-DK-imU"/>
+                <constraint firstAttribute="trailing" secondItem="my3-Rq-YHI" secondAttribute="trailing" constant="8" id="cqM-ag-tFS"/>
+                <constraint firstItem="Lwq-I7-a9n" firstAttribute="top" secondItem="qJY-Qz-zGZ" secondAttribute="bottom" constant="15" id="pkX-6e-CoX"/>
+                <constraint firstAttribute="centerX" secondItem="oNk-f8-fpM" secondAttribute="centerX" id="rG8-04-3Uv"/>
+                <constraint firstItem="my3-Rq-YHI" firstAttribute="top" secondItem="oNk-f8-fpM" secondAttribute="bottom" constant="8" id="wXb-Qh-BtE"/>
+            </constraints>
+            <point key="canvasLocation" x="362" y="276"/>
+        </view>
+    </objects>
+</document>
