@@ -26,8 +26,8 @@ class CategoryCollectionViewController: UICollectionViewController , UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     
-
+        let btnProceed = UIBarButtonItem(title: "Proceed", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("clickedProceed:"))
+        self.navigationItem.rightBarButtonItem = btnProceed
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -44,6 +44,10 @@ class CategoryCollectionViewController: UICollectionViewController , UICollectio
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @objc func clickedProceed( sender : UIBarButtonItem){
+        let tblVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("main") as TableViewController
+        self.navigationController?.pushViewController(tblVC, animated: true)
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -69,7 +73,7 @@ class CategoryCollectionViewController: UICollectionViewController , UICollectio
         return CGSizeMake(100, 60)
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(100, 100)
+        return CGSizeMake(90, 90)
     }
 
     /*

@@ -33,25 +33,25 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var isBannerHide : Bool = false
     
     var isSplitScroll = true
+    
+    var isLeftTableTouched = false
+    var isRightTableTouched = false
 
     @IBOutlet weak var tblLeft: UITableView!
     @IBOutlet weak var tblRight: UITableView!
     @IBOutlet weak var viewBanner: UIView!
     @IBOutlet weak var imgBanner: UIImageView!
     
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         var switchbtn = UISwitch()
-        switchbtn.setOn(isSplitScroll, animated: true)
+        switchbtn.setOn(isSplitScroll, animated: false)
         switchbtn.addTarget(self, action: Selector("switched:"), forControlEvents: UIControlEvents.ValueChanged)
         var btn = UIBarButtonItem(customView: switchbtn)
         self.navigationItem.rightBarButtonItem = btn
-        
-        var btnDone = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("clickedDone:"))
-        self.navigationItem.leftBarButtonItem = btnDone
-        
         
         var titleView : UIImageView = UIImageView(image: UIImage(named: "star.png"))
         titleView.contentMode = UIViewContentMode.ScaleAspectFit
@@ -77,6 +77,13 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.getData(dataLeft, dataArray: arrayDataLeft!)
         self.getData(dataRight, dataArray: arrayDataRight!)
         
+       // tblLeft.bounces = false
+       // tblRight.bounces = false
+        
+        //tblLeft.exclusiveTouch = true
+        
+        println("tbl content offset \(tblLeft.contentOffset.y) || \(tblRight.contentOffset.y)")
+        
         /*
         UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(recognizePan:)];
         panGestureRecognizer.maximumNumberOfTouches = 1;
@@ -95,11 +102,15 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     @objc func switched(sender : UISwitch){
         isSplitScroll = !isSplitScroll
+        
+        if(isSplitScroll)
+        {
+          //  self.view.multipleTouchEnabled = false
+        }
+       // self.tblRight.setContentOffset(self.tblLeft.contentOffset, animated: true)
         //sender.setOn(isSplitScroll, animated: true)
     }
-    func clickedDone(sender : AnyObject){
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+
     @objc func swipeBanner(sender : AnyObject){
         if !isBannerHide {
             self.moveBannerWithHeight(self.viewBanner.frame.height)
@@ -114,7 +125,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     func moveBannerWithHeight(heightx : CGFloat!){
         UIView.animateWithDuration(0.25, delay: 0, usingSpringWithDamping: 8, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-            var height = heightx * 0.90
+            var height = heightx * 0.70
             
             self.viewBanner.frame.origin.y -= height
             
@@ -160,6 +171,12 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        let vw: AnyObject? = touches.anyObject()
+        
+        println("view touched : \(vw)")
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
@@ -227,6 +244,27 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return arr
     }
     
+    func scrollDirection(scrollView : UIScrollView) -> ScrollDirection{
+        var direction :ScrollDirection?
+        
+        if scrollView == self.tblLeft{
+            if lastLeftY > scrollView.contentOffset.y{
+                direction = ScrollDirection.down
+            }
+            else{
+                direction = ScrollDirection.up
+            }
+        }
+        else if scrollView == self.tblRight{
+            if lastRightY > scrollView.contentOffset.y{
+                direction = ScrollDirection.down
+            }
+            else{
+                direction = ScrollDirection.up
+            }
+        }
+        return direction!
+    }
     func tryScrollView( scrollView : UIScrollView, lastValueY : CGFloat) -> (ScrollDirection, CGFloat ){
         var direction : ScrollDirection?
         var valueY = lastValueY
@@ -248,66 +286,55 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //delegate methods for UIScrollview
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        let tbl : String = scrollView == self.tblLeft ? "Left" : "Right"
-        //   println("will begin dragging : \(tbl)")
         touchedTable = scrollView as UITableView
+        
+        if scrollView == tblLeft {
+            isLeftTableTouched = true
+            tblRight.userInteractionEnabled = false
+            println("left began draging")
+        }
+        else {
+            isRightTableTouched = true
+            tblLeft.userInteractionEnabled = false
+            println("right began draging")
+        }
     }
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let tbl : String = scrollView == self.tblLeft ? "Left" : "Right"
         
         if(isSplitScroll == true)
         {
-            if scrollView == self.tblLeft && touchedTable == self.tblLeft
+            if scrollView == self.tblLeft && isLeftTableTouched
             {
                 self.tblRight.contentOffset.y = scrollView.contentOffset.y
             }
-            else
+            else if scrollView == self.tblRight && isRightTableTouched
             {
                 self.tblLeft.contentOffset.y = scrollView.contentOffset.y
             }
-            
         }
-        /*
-        if scrollView == self.tblLeft && touchedTable == self.tblLeft
-        {
-         //   var leftY = lastLeftY
-            
-           // self.tblRight.contentOffset.y = scrollView.contentOffset.y * 0.45
-            if(lastLeftY >= scrollView.contentOffset.y)
-            {
-                //going down
-                self.tblRight.contentOffset.y -= scrollConstant
-            }
-            else
-            {
-                //going up
-                self.tblRight.contentOffset.y += scrollConstant
-            }
-            lastLeftY = self.tblRight.contentOffset.y
-        }
-        else if scrollView == self.tblRight && touchedTable == self.tblRight
-        {
-            //self.tblLeft.contentOffset.y = scrollView.contentOffset.y * 0.45
-            if(lastRightY >= scrollView.contentOffset.y)
-            {
-                //going down
-                self.tblLeft.contentOffset.y -= scrollConstant
-            }
-            else
-            {
-                self.tblLeft.contentOffset.y += scrollConstant
-            }
-            lastRightY = self.tblLeft.contentOffset.y
-        }
-        
-    //    println("scrolling : tblLeft \(self.tblLeft.contentOffset.y) , tblRight : \(self.tblRight.contentOffset.y)")
-        */
     }
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         // self.endScrollView(scrollView)
+        if scrollView == tblLeft {
+            isLeftTableTouched = false
+            tblRight.userInteractionEnabled = true
+        }
+        else {
+            isRightTableTouched = false
+            tblLeft.userInteractionEnabled = true
+        }
     }
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         //  self.endScrollView(scrollView)
+        if scrollView == tblLeft {
+            isLeftTableTouched = false
+            tblRight.userInteractionEnabled = true
+        }
+        else {
+            isRightTableTouched = false
+            tblLeft.userInteractionEnabled = true
+        }
     }
 
 }

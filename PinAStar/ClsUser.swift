@@ -21,5 +21,4 @@ class ClsUser: NSObject {
     var updated : NSDate?
     var verified : Bool?
     
-    
 }

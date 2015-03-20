@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="380" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="Sample" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="380" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="PinAStar" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="214" height="380"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -83,12 +84,58 @@
                         <rect key="frame" x="8" y="8" width="198" height="194"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mC4-zK-fdd">
+                        <rect key="frame" x="0.0" y="0.0" width="214" height="46"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1w-4c-t2o">
+                                <rect key="frame" x="34" y="5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="3kQ-28-QVM"/>
+                                    <constraint firstAttribute="height" constant="35" id="E4R-mt-5hy"/>
+                                </constraints>
+                                <state key="normal" image="pin.jpeg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ll-54-bvn">
+                                <rect key="frame" x="147" y="5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Qzd-nf-DLE"/>
+                                    <constraint firstAttribute="width" constant="35" id="vUS-bf-0dr"/>
+                                </constraints>
+                                <state key="normal" image="share.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZE-8L-nSa">
+                                <rect key="frame" x="90" y="5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="HFm-ww-7v3"/>
+                                    <constraint firstAttribute="height" constant="35" id="r8R-9X-irk"/>
+                                </constraints>
+                                <state key="normal" image="star.jpeg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="RZE-8L-nSa" secondAttribute="centerX" id="C4v-jh-dZn"/>
+                            <constraint firstAttribute="centerY" secondItem="G1w-4c-t2o" secondAttribute="centerY" id="Gys-XA-OHO"/>
+                            <constraint firstItem="4Ll-54-bvn" firstAttribute="leading" secondItem="RZE-8L-nSa" secondAttribute="trailing" constant="22" id="Ztg-yc-Aie"/>
+                            <constraint firstItem="RZE-8L-nSa" firstAttribute="leading" secondItem="G1w-4c-t2o" secondAttribute="trailing" constant="21" id="bry-KH-VIT"/>
+                            <constraint firstAttribute="centerY" secondItem="RZE-8L-nSa" secondAttribute="centerY" id="cvF-vh-JnK"/>
+                            <constraint firstAttribute="height" constant="46" id="i1i-Rj-3Vw"/>
+                            <constraint firstAttribute="centerY" secondItem="4Ll-54-bvn" secondAttribute="centerY" id="q98-DO-sv3"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="YWg-Oo-5oc" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="4qf-GR-jiH"/>
                     <constraint firstAttribute="bottomMargin" secondItem="gj6-7t-beK" secondAttribute="bottom" constant="-3" id="5tg-Cn-3ee"/>
                     <constraint firstItem="7Ib-Ty-ahH" firstAttribute="leading" secondItem="BLv-TU-XMs" secondAttribute="trailing" constant="8" id="6Sf-EZ-aTr"/>
                     <constraint firstItem="YWg-Oo-5oc" firstAttribute="top" secondItem="7b1-Ig-aFx" secondAttribute="bottom" constant="12" id="7pu-US-c5m"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="mC4-zK-fdd" secondAttribute="trailing" constant="-8" id="B2C-lW-MG5"/>
                     <constraint firstAttribute="trailingMargin" secondItem="gj6-7t-beK" secondAttribute="trailing" constant="2" id="B7E-pS-FNy"/>
                     <constraint firstItem="YWg-Oo-5oc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="E96-DG-CKJ"/>
                     <constraint firstItem="7b1-Ig-aFx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="EKh-Zg-Cx5"/>
@@ -98,10 +145,12 @@
                     <constraint firstItem="7b1-Ig-aFx" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="PHK-vD-Tv2"/>
                     <constraint firstItem="BLv-TU-XMs" firstAttribute="top" secondItem="YWg-Oo-5oc" secondAttribute="bottom" constant="13" id="UwF-RG-Kds"/>
                     <constraint firstItem="RvZ-nd-1yG" firstAttribute="top" secondItem="7Ib-Ty-ahH" secondAttribute="bottom" constant="8" id="e3h-kr-msH"/>
+                    <constraint firstItem="mC4-zK-fdd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="gs4-jS-JZI"/>
                     <constraint firstItem="YWg-Oo-5oc" firstAttribute="top" secondItem="7b1-Ig-aFx" secondAttribute="bottom" constant="12" id="jck-u2-BHW"/>
                     <constraint firstItem="gj6-7t-beK" firstAttribute="leading" secondItem="RvZ-nd-1yG" secondAttribute="trailing" constant="8" id="m3x-pc-2Oc"/>
                     <constraint firstItem="RvZ-nd-1yG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="mDx-Tv-Wnj"/>
                     <constraint firstItem="7Ib-Ty-ahH" firstAttribute="top" secondItem="YWg-Oo-5oc" secondAttribute="bottom" constant="13" id="sXg-fS-8rs"/>
+                    <constraint firstItem="mC4-zK-fdd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="x6l-9Q-ome"/>
                     <constraint firstAttribute="bottomMargin" secondItem="RvZ-nd-1yG" secondAttribute="bottom" constant="-2" id="xDq-yk-DR8"/>
                 </constraints>
             </tableViewCellContentView>
@@ -111,8 +160,14 @@
                 <outlet property="btnRemove" destination="gj6-7t-beK" id="AdU-23-HyH"/>
                 <outlet property="img" destination="7b1-Ig-aFx" id="2eD-Lq-Gl5"/>
                 <outlet property="txtExcerpt" destination="YWg-Oo-5oc" id="O7o-CH-b45"/>
+                <outlet property="vwPane" destination="mC4-zK-fdd" id="Ch8-vQ-rQQ"/>
             </connections>
-            <point key="canvasLocation" x="300" y="302.5"/>
+            <point key="canvasLocation" x="300" y="296"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="pin.jpeg" width="50" height="50"/>
+        <image name="share.png" width="50" height="50"/>
+        <image name="star.jpeg" width="50" height="50"/>
+    </resources>
 </document>

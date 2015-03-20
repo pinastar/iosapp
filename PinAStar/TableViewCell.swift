@@ -17,8 +17,10 @@ protocol TableViewCellDelegate{
 }
 class TableViewCell: UITableViewCell {
     
+    @IBOutlet weak var vwPane: UIView!
     var data :Data?
     var delegate :TableViewCellDelegate?
+    let appdel = UIApplication.sharedApplication().delegate as AppDelegate
     
     func setDataUI()
     {
@@ -46,6 +48,8 @@ class TableViewCell: UITableViewCell {
         
         self.img.userInteractionEnabled = false
         self.txtExcerpt.userInteractionEnabled = false
+        
+        vwPane.alpha = 0
     }
     
     
@@ -57,15 +61,15 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var btnHeart: UIButton!
     @IBOutlet weak var btnRemove: UIButton!
     
+    
+    
     required init(coder aDecoder: NSCoder) {
         
-        super.init(coder: aDecoder)
-        
-        println("cell coder")
-        
+        super.init(coder: aDecoder)        
         var longpressGR = UILongPressGestureRecognizer(target: self, action: "longPressed:")
-        longpressGR.minimumPressDuration = 1.0
+        longpressGR.minimumPressDuration = 0.5
         self.addGestureRecognizer(longpressGR)
+        
     }
     @objc func longPressed(sender : UILongPressGestureRecognizer){
        
@@ -73,13 +77,26 @@ class TableViewCell: UITableViewCell {
         
         if sender.state  == UIGestureRecognizerState.Ended{
              println("long pressed ended")
-
+            UIView.animateWithDuration(0.25, animations: { () -> Void in
+                self.vwPane.alpha = 0
+            })
         }
         else if sender.state == UIGestureRecognizerState.Began{
              println("long pressed begin")
+               // self.removeConstraints(vwPane.constraints())
             
-            var pop : Popup = Popup()
-            pop.show()
+               // let pt = sender.locationInView(self)
+               // self.center.y = pt.y
+            
+               // vwPane.updateConstraintsIfNeeded()
+               // self.vwPane.removeFromSuperview()
+            
+               // self.vwPane.center = pt
+               // appdel.window?.addSubview(self.vwPane)
+            
+                UIView.animateWithDuration(0.25, animations: { () -> Void in
+                    self.vwPane.alpha = 1
+              })
         }
         
     }

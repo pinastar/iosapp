@@ -31,6 +31,9 @@
 		001C34471AB9C02200D5A6B3 /* image5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 001C343C1AB9C02200D5A6B3 /* image5.jpeg */; };
 		001C34481AB9C02200D5A6B3 /* image6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 001C343D1AB9C02200D5A6B3 /* image6.jpeg */; };
 		001C34491AB9C02200D5A6B3 /* image7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 001C343E1AB9C02200D5A6B3 /* image7.jpeg */; };
+		0020D6331ABC4E63008F2A7E /* pin.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0020D6301ABC4E63008F2A7E /* pin.jpeg */; };
+		0020D6341ABC4E63008F2A7E /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 0020D6311ABC4E63008F2A7E /* share.png */; };
+		0020D6351ABC4E63008F2A7E /* star.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0020D6321ABC4E63008F2A7E /* star.jpeg */; };
 		00CD9E1E1AB6F7170023CD17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD9E1D1AB6F7170023CD17 /* AppDelegate.swift */; };
 		00CD9E201AB6F7170023CD17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD9E1F1AB6F7170023CD17 /* ViewController.swift */; };
 		00CD9E231AB6F7170023CD17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00CD9E211AB6F7170023CD17 /* Main.storyboard */; };
@@ -89,6 +92,9 @@
 		001C343C1AB9C02200D5A6B3 /* image5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image5.jpeg; sourceTree = "<group>"; };
 		001C343D1AB9C02200D5A6B3 /* image6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image6.jpeg; sourceTree = "<group>"; };
 		001C343E1AB9C02200D5A6B3 /* image7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image7.jpeg; sourceTree = "<group>"; };
+		0020D6301ABC4E63008F2A7E /* pin.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pin.jpeg; sourceTree = "<group>"; };
+		0020D6311ABC4E63008F2A7E /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		0020D6321ABC4E63008F2A7E /* star.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = star.jpeg; sourceTree = "<group>"; };
 		00CD9E181AB6F7170023CD17 /* PinAStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinAStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CD9E1C1AB6F7170023CD17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00CD9E1D1AB6F7170023CD17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +165,9 @@
 		001C33F21AB9BE3A00D5A6B3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0020D6301ABC4E63008F2A7E /* pin.jpeg */,
+				0020D6311ABC4E63008F2A7E /* share.png */,
+				0020D6321ABC4E63008F2A7E /* star.jpeg */,
 				001C33F01AB9BE0D00D5A6B3 /* TableViewController.swift */,
 				001C33FD1AB9BE7300D5A6B3 /* Popup.swift */,
 				001C33FE1AB9BE7300D5A6B3 /* Popup.xib */,
@@ -210,9 +219,8 @@
 		00CD9E1A1AB6F7170023CD17 /* PinAStar */ = {
 			isa = PBXGroup;
 			children = (
-				00CF66641ABB070200A1CB00 /* Startup - Friends */,
-				00CFA0141ABAECE100681641 /* Startup - Category */,
-				00CFA00F1ABAE49400681641 /* UI - Login / Logout */,
+				00CF66691ABB100200A1CB00 /* StartUp */,
+				00CFA00F1ABAE49400681641 /* Login */,
 				001C33F21AB9BE3A00D5A6B3 /* Main */,
 				001C33EF1AB9BDDD00D5A6B3 /* Images */,
 				001C33EA1AB9B84E00D5A6B3 /* User */,
@@ -265,16 +273,25 @@
 			name = Facebook;
 			sourceTree = "<group>";
 		};
-		00CF66641ABB070200A1CB00 /* Startup - Friends */ = {
+		00CF66641ABB070200A1CB00 /* Friend */ = {
 			isa = PBXGroup;
 			children = (
 				00CF66651ABB08BD00A1CB00 /* FriendCollectionViewController.swift */,
 				00CF66661ABB08BD00A1CB00 /* FriendCollectionViewController.xib */,
 			);
-			name = "Startup - Friends";
+			name = Friend;
 			sourceTree = "<group>";
 		};
-		00CFA00F1ABAE49400681641 /* UI - Login / Logout */ = {
+		00CF66691ABB100200A1CB00 /* StartUp */ = {
+			isa = PBXGroup;
+			children = (
+				00CF66641ABB070200A1CB00 /* Friend */,
+				00CFA0141ABAECE100681641 /* Category */,
+			);
+			name = StartUp;
+			sourceTree = "<group>";
+		};
+		00CFA00F1ABAE49400681641 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				00CFA0101ABAE4B900681641 /* MainViewController.swift */,
@@ -282,10 +299,10 @@
 				00CFA00B1ABADF0700681641 /* LoggedViewController.swift */,
 				00CFA00C1ABADF0700681641 /* LoggedViewController.xib */,
 			);
-			name = "UI - Login / Logout";
+			name = Login;
 			sourceTree = "<group>";
 		};
-		00CFA0141ABAECE100681641 /* Startup - Category */ = {
+		00CFA0141ABAECE100681641 /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				00CFA0151ABAED0E00681641 /* CategoryCollectionViewController.swift */,
@@ -296,7 +313,7 @@
 				00CF66601ABB014200A1CB00 /* CategoryCollectionFooter.xib */,
 				00CF66621ABB050800A1CB00 /* CategoryCollectionFooter.swift */,
 			);
-			name = "Startup - Category";
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,8 +399,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				001C33FB1AB9BE5000D5A6B3 /* Data.plist in Resources */,
+				0020D6341ABC4E63008F2A7E /* share.png in Resources */,
 				001C34491AB9C02200D5A6B3 /* image7.jpeg in Resources */,
 				001C34461AB9C02200D5A6B3 /* image4.jpeg in Resources */,
+				0020D6331ABC4E63008F2A7E /* pin.jpeg in Resources */,
 				001C34401AB9C02200D5A6B3 /* image11.jpeg in Resources */,
 				001C34411AB9C02200D5A6B3 /* image8.jpeg in Resources */,
 				00CFA0131ABAE4B900681641 /* MainViewController.xib in Resources */,
@@ -392,6 +411,7 @@
 				00CF66681ABB08BD00A1CB00 /* FriendCollectionViewController.xib in Resources */,
 				001C33E81AB99FF000D5A6B3 /* TwitterKitResources.bundle in Resources */,
 				001C34451AB9C02200D5A6B3 /* image3.jpeg in Resources */,
+				0020D6351ABC4E63008F2A7E /* star.jpeg in Resources */,
 				00CF665F1ABAF7CC00A1CB00 /* CategoryCollectionHeader.xib in Resources */,
 				001C34001AB9BE7300D5A6B3 /* Popup.xib in Resources */,
 				001C33F71AB9BE4500D5A6B3 /* TableViewCell.xib in Resources */,
