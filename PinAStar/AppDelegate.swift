@@ -7,18 +7,60 @@
 //
 
 import UIKit
+import Social
+import Fabric
+import TwitterKit
+
+let client_id = ""
+let secret_key = ""
+let callback = ""
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        FBAppEvents.activateApp()
+        
+        //FBLoginView.self
+       // FBProfilePictureView.self
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        var state = isLoggedIn()
+        if(state == true){
+            var loggedVC = LoggedViewController()
+            var nav = UINavigationController(rootViewController: loggedVC)
+            self.window?.rootViewController = nav
+            
+        }
+        else{
+           // var logged
+            var mainVC = MainViewController()
+            var nav = UINavigationController(rootViewController: mainVC)
+            self.window?.rootViewController = nav
+        }
+        self.window?.makeKeyAndVisible()
+       
+       // Fabric.with([Twitter()])
+
         return true
     }
-
+    
+    func isLoggedIn() -> Bool{
+        var activeSession = FBSession.activeSession()
+        let state = activeSession.state
+        let isLoggedIn = activeSession != nil && (state == FBSessionState.Open || state == FBSessionState.CreatedTokenLoaded || state == FBSessionState.OpenTokenExtended)
+        return isLoggedIn
+    }
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        var wasHandled: Bool = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
+        
+        return wasHandled
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -34,6 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
+        
+        FBAppCall.handleDidBecomeActive()
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bmY-k0-3Gk" customClass="CategoryCollectionFooter" customModule="PinAStar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="455" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXd-v1-5mb">
+                    <rect key="frame" x="12" y="12" width="431" height="36"/>
+                    <color key="backgroundColor" red="0.23696060683999676" green="0.78698912212853112" blue="0.91688368055555558" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="Follow">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="clickedFollow:" destination="bmY-k0-3Gk" eventType="touchUpInside" id="nAh-IO-jBh"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="XXd-v1-5mb" secondAttribute="trailing" constant="12" id="8MY-Qf-0pn"/>
+                <constraint firstItem="XXd-v1-5mb" firstAttribute="leading" secondItem="bmY-k0-3Gk" secondAttribute="leading" constant="12" id="O8j-FA-Ynn"/>
+                <constraint firstAttribute="bottom" secondItem="XXd-v1-5mb" secondAttribute="bottom" constant="12" id="hST-0B-sNM"/>
+                <constraint firstItem="XXd-v1-5mb" firstAttribute="top" secondItem="bmY-k0-3Gk" secondAttribute="top" constant="12" id="lP0-Tu-jND"/>
+            </constraints>
+            <connections>
+                <outlet property="btnFollow" destination="XXd-v1-5mb" id="6p5-UW-n4y"/>
+            </connections>
+            <point key="canvasLocation" x="275.5" y="188"/>
+        </collectionReusableView>
+    </objects>
+</document>
